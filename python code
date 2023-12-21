@@ -1,0 +1,16 @@
+def draw(deck):
+#     print_deck(deck, True)   # Using unicode characters
+    print_deck(deck, False)  # Using regular characters
+    deck_res = []
+    temp_deck = deck
+    
+    while len(temp_deck) > 0:
+        for i, card in enumerate(temp_deck):
+            if len(temp_deck) > 1:
+                temp_card = temp_deck.pop(1)
+                temp_deck.append(temp_card)
+                deck_res.append(temp_deck.pop(0))
+            else:
+                deck_res.append(temp_deck.pop(0))
+    
+    return deck_res
